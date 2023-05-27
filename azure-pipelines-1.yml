@@ -21,7 +21,8 @@ stages:
       vmImage: ubuntu-latest
     steps:
     - task: DockerCompose@0
-    inputs: 
+      displayName: Build & Run an image
+      inputs: 
         containerregistrytype: 'Azure Container Registry'
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Run a Docker Compose command'
