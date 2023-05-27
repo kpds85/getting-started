@@ -29,7 +29,8 @@ stages:
         containerregistrytype: 'Container Registry'
         dockerRegistryEndpoint: 'KPDockerConnection'
         dockerComposeFile: '**/docker-compose.yml'
-        action: 'Run a Docker Compose command'
+        action: 'Run services'
         dockerComposeCommand: 'up'
+        
         
         
