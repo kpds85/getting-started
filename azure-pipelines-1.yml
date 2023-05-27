@@ -27,7 +27,7 @@ stages:
       displayName: Build image & Spin up the container with getting started example. 
       inputs: 
         containerregistrytype: 'Container Registry'
-        dockerRegistryEndpoint: 'docker.io/kpds/repo4sir6cob'
+        dockerRegistryEndpoint: 'KPDockerConnection'
         ports: 8080:80
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Run a Docker Compose command'
