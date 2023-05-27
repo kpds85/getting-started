@@ -4,3 +4,4 @@
     dockerComposeFile: '**/docker-compose.yml'
     action: 'Run a Docker Compose command'
     dockerComposeCommand: 'up'
+    projectName: 'getting-started'
