@@ -17,6 +17,10 @@ stages:
   jobs:
   - job: Build
     displayName: Build
+    services:
+      web:
+      ports:
+       - 8080:80
     pool:
       vmImage: ubuntu-latest
     steps:
@@ -28,3 +32,4 @@ stages:
         action: 'Run a Docker Compose command'
         dockerComposeCommand: 'up'
         projectName: 'getting-started'
+        
