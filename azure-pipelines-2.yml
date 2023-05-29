@@ -41,11 +41,12 @@ stages:
        containerRegistry: 'KPDockerConnection'
     - script: |
        imageId=$(docker images --format "{{.ID}}" $(imageRepository):$(tag))
-       echo "##vso[task.setvariable variable=imageId]$imageId"
-       echo "ImageId : $imageId"
+       echo "##vso[task.setvariable variable=imageId;isOutput=true]$imageId"
+       echo "ImageId: $imageId"
+      name: SetImageId
       displayName: Getting Image Id
     - script: |
-       docker tag $imageId $(imageRepository):$(tag)
+       docker tag $[dependencies.BuildImage.outputs['BuildImage.imageId']] $(imageRepository):$(tag)
       displayName: Do Tag
   
     - task: Docker@2
@@ -63,3 +64,6 @@ stages:
         dockerRegistryEndpoint: 'KPDockerConnection'
         dockerComposeFile: '**/docker-compose.yml'
         action: 'Run services'
+    - script: |
+       echo "ImageId: $[dependencies.SetImageId.outputs['SetImageId.imageId']]"
+      displayName: Printing ImageId
