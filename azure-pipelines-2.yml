@@ -30,7 +30,8 @@ stages:
         tags: '$(imageRepository):$(tag)'
     - script: |
        echo "Imagename: $(imageRepository):$(tag)"
-      displayName: Printing Image Name
+       docker images
+      displayName: Printing Image Name and list of Docker Images
     - task: Docker@2
       displayName: Login to Docker Hub
       inputs:
@@ -43,6 +44,7 @@ stages:
         command: push
         containerRegistry: 'KPDockerConnection'
         repository: '$(imageRepository)'
+        tags: '$(tag)'
       
     - task: DockerCompose@0
       displayName: Run Docker Image
