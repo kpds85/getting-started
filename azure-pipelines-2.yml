@@ -29,7 +29,7 @@ stages:
       inputs:
         command: buildAndPush
         containerRegistry: |
-            kpds85/repo4sir6cob:getting-started
+            KPDockerConnection
             kpds85
             Sivasan@5084
         repository: repo4sir6cob
