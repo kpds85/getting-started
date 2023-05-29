@@ -30,8 +30,6 @@ stages:
         command: buildAndPush
         containerRegistry: |
             KPDockerConnection
-            kpds85
-            Sivasan@5084
         repository: repo4sir6cob
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
