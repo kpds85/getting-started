@@ -42,7 +42,7 @@ stages:
       inputs:
         command: push
         containerRegistry: 'KPDockerConnection'
-        repository: '$(imageRepository)'
+        repository: '$(imageRepository):$(tag)'
         tags: '$(tag)'
       
     - task: DockerCompose@0
