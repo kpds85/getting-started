@@ -6,7 +6,11 @@ trigger:
 - master
 
 resources:
-- repo: self
+ containers:
+   - container: dockerRegistry
+     image: kpds85/repo4sir6cob:getting-started
+     endpoint: KPDockerConnection
+   
 
 variables:
   tag: '$(Build.BuildId)'
@@ -25,10 +29,10 @@ stages:
       inputs:
         command: buildAndPush
         containerRegistry: |
-            $(registry)
-            $(username)
-            $(password)
-        repository: $(repository)
+            kpds85/repo4sir6cob:getting-started
+            kpds85
+            Sivasan@5084
+        repository: repo4sir6cob
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         tags: |
           $(tag)
