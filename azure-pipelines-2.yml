@@ -11,7 +11,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  imagerepository: kpds/repo4sir6cob
+  imagerepository: 'kpds/repo4sir6cob'
 
 stages:
 - stage: Build
@@ -27,14 +27,14 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        tags: $(imageRepository):$(tag)
+        tags: '$(imageRepository):$(tag)'
     - task: Docker@2
       displayName: Push Docker Image
       inputs:
         command: push
         containerRegistry: 'KPDockerConnection'
-        repository: $(imageRepository)
-        tags: $(tag)
+        repository: '$(imageRepository)'
+        tags: '$(tag)'
       
     - task: DockerCompose@0
       displayName: Run Docker Image
