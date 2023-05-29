@@ -32,7 +32,7 @@ stages:
       displayName: Push Docker Image
       inputs:
         command: push
-        containerRegistry: 'docker.io'
+        containerRegistry: 'KPDockerConnection'
         repository: $(imageRepository)
         tags: $(tag)
       
