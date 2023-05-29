@@ -28,8 +28,7 @@ stages:
         containerRegistry: 'KPDockerConnection'
         repository: 'repo4sir6cob'
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        tags: |
-          $(tag)
+        tags: latest
     - task: DockerCompose@0
       inputs:
         containerregistrytype: 'Container Registry'
