@@ -43,7 +43,6 @@ stages:
         command: push
         containerRegistry: 'KPDockerConnection'
         repository: '$(imageRepository):$(tag)'
-        tags: '$(tag)'
       
     - task: DockerCompose@0
       displayName: Run Docker Image
