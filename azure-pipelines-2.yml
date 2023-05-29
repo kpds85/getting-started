@@ -27,7 +27,10 @@ stages:
       inputs:
         command: build
         dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
-        tags: '$(imageRepository):$(tag)'
+        tags: |
+         '$(imageRepository):$(tag)'
+         '$(imageRepository):latest'
+         
       name: BuildImage
     - script: |
        echo "Imagename: $(imageRepository):$(tag)"
