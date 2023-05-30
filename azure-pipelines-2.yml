@@ -11,7 +11,7 @@ resources:
 
 variables:
   tag: '$(Build.BuildId)'
-  imagerepository: 'kpds/repo4sir6cob'
+  imagerepository: 'kpds85/repo4sir6cob'
 
 stages:
 - stage: Build
